@@ -1,8 +1,3 @@
-// Demonstration of variable types
-var systemLog = "Initializing..."; // var: Function-scoped, allows redeclaration
-let logCount = 0;                  // let: Block-scoped, reassignable
-const MAX_RETRIES = 3;             // const: Block-scoped, cannot be reassigned
-
 const gladiia = {
   fileNumber: "AA05",
   codename: "Gladiia",
@@ -21,10 +16,8 @@ const gladiia = {
     Waterless Dance of the Shattered Maelstrom`
 };
 
-var databaseName = "Rhodes Island Personnel Archive"; // var used here to allow potential external override
-let sessionActive = true;                             // let: Reassignable session flag
-const DEFAULT_CLEARANCE = "Level 8";                  // const: Immutable clearance level
-
+var databaseName = "Rhodes Island Personnel Archive";
+const DEFAULT_CLEARANCE = "Level 8";
 
 function displayOperatorProfile(operator) {
   let infectionStatus = operator.isInfected ? "Infected" : "Non-infected";
@@ -47,9 +40,6 @@ function displayOperatorProfile(operator) {
   console.log(`Height: ${operator.heightCm} CM`);
   console.log(`Infection Status: ${infectionStatus}`);
   console.log(`Security Level: ${clearanceLevel}`);
-  // Example of changing logCount
-  logCount++;
-  console.log(`Log entry #${logCount} processed.`);
 
   console.log(`Skills: ${operator.specialtySkills}`);
   console.log("===================================");
