@@ -1,0 +1,298 @@
+:root {
+  /* Rosé Pine Moon Palette */
+  --bg-primary: #191724;
+  --bg-card: #1f1d2e;
+  --bg-overlay: #26233a;
+  --text-main: #e0def4;
+  --text-muted: #6e6a86;
+  --accent-pine: #9ccfd8;
+  --accent-foam: #3e8fb0;
+  --accent-rose: #eb6f92;
+  --accent-gold: #f6c177;
+  --accent-iris: #c4a7e7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: 'Share Tech Mono', monospace;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background-image:
+    radial-gradient(circle at 50% 15%, rgba(196, 167, 231, 0.08) 0%, transparent 65%),
+    linear-gradient(rgba(25, 23, 36, 0.95), rgba(25, 23, 36, 0.95));
+}
+
+/* Outer Card Container */
+.archive-container {
+  max-width: 880px;
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--accent-iris);
+  box-shadow: 0 0 40px rgba(196, 167, 231, 0.12);
+  position: relative;
+}
+
+.archive-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-foam);
+}
+
+/* Header Section */
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: var(--bg-overlay);
+  border-bottom: 1px solid var(--bg-overlay);
+  font-size: 0.85rem;
+}
+
+.rhodes-tag {
+  color: var(--text-main);
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-right: 12px;
+}
+
+.archive-tag {
+  color: var(--accent-gold);
+  letter-spacing: 1px;
+}
+
+.file-tag {
+  color: var(--accent-foam);
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+}
+
+/* Dossier Main Content */
+.dossier-card {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 28px;
+  gap: 28px;
+}
+
+/* Left Column: Portrait & Badges */
+.portrait-wrapper {
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.image-frame {
+  width: 100%;
+  max-width: 240px;
+  height: 280px;
+  border: 1px solid var(--accent-foam);
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.05) brightness(0.95);
+}
+
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(rgba(0, 0, 0, 0) 0px,
+      rgba(0, 0, 0, 0) 3px,
+      rgba(0, 210, 255, 0.05) 4px);
+  pointer-events: none;
+}
+
+.badge-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.rarity {
+  color: var(--accent-gold);
+  letter-spacing: 4px;
+  font-size: 1.2rem;
+}
+
+.class-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--accent-foam);
+  letter-spacing: 1px;
+}
+
+.class-badge .divider {
+  color: var(--text-muted);
+}
+
+.position-badge {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Right Column: Info & Stats */
+.info-wrapper {
+  flex: 2 1 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.dossier-heading .title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.dossier-heading h1 {
+  font-family: 'Teko', sans-serif;
+  font-size: 3.2rem;
+  line-height: 0.9;
+  letter-spacing: 3px;
+  color: var(--text-main);
+}
+
+.sub-name {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.code-id {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--accent-foam);
+  margin-top: 4px;
+}
+
+/* Stats Grid */
+.grid-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  background: var(--bg-card);
+  padding: 16px;
+  border-left: 2px solid var(--accent-iris);
+  border-top: 1px solid var(--bg-overlay);
+}
+
+.stat-item label {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+/* Inline Icons (Faction, Sub-faction, Class, Branch) */
+.inline-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 8px;
+  filter: drop-shadow(0 0 4px rgba(0, 210, 255, 0.4));
+}
+
+.badge-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.with-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.status-clean {
+  color: var(--accent-foam) !important;
+}
+
+/* Skills Box */
+.skills-box {
+  background: var(--bg-card);
+  border-left: 2px solid var(--accent-foam);
+  padding: 14px 16px;
+}
+
+.skills-box h3 {
+  font-size: 0.75rem;
+  color: var(--accent-foam);
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--bg-overlay);
+  padding-bottom: 4px;
+}
+
+.skills-content {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* Footer Section */
+.terminal-footer {
+  padding: 12px 24px;
+  background: var(--bg-overlay);
+  border-top: 1px solid var(--bg-overlay);
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.terminal-footer span {
+  color: var(--accent-pine);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 650px) {
+  .grid-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .dossier-heading .title-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
