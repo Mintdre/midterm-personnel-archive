@@ -7,7 +7,6 @@ A personal archive dashboard for Arknights operator Gladiia, themed with the **R
 - `css/`: Contains `styles.css` for site styling.
 - `js/`: Contains `script.js` with operator data and display logic.
 - `index.html`: Main structure of the archive.
-- `LICENSE`: MIT License.
 
 ## Features
 - Interactive operator profile card.
